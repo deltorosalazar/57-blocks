@@ -1,6 +1,6 @@
 import { FC, ReactNode, useContext } from 'react'
 import { BottomNavbar, Button, InputSearchable } from '@components'
-import { AuthContext } from '@contexts'
+import { AuthContext, PokemonsContext } from '@contexts'
 import styles from './styles.module.scss'
 import cx from 'classnames'
 
@@ -11,15 +11,19 @@ type BaseLayoutProps = ReactNode & {
 export const BaseLayout: FC<BaseLayoutProps> = (props) => {
   const { children, showSearchBox = true } = props
   const authContext = useContext(AuthContext)
+  const pokemonsContext = useContext(PokemonsContext)
 
   return (
     <div className={styles.baseLayout}>
       <div className={styles.baseLayoutWrapper}>
         <header className={styles.header}>
-          {showSearchBox && <InputSearchable
-            className={cx(styles.inputSearchable)}
-            placeholder='Type to filter...'
-          />}
+          {showSearchBox && (
+            <InputSearchable
+              className={cx(styles.inputSearchable)}
+              onChange={(e) => pokemonsContext.handleSearch(e.target.value)}
+              placeholder='Type to filter...'
+            />
+          )}
         </header>
         <main className={styles.main}>
           {children}

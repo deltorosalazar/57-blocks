@@ -30,7 +30,12 @@ export const PokemonTileView: FC<PokemonTileProps> = (props) => {
             })}
             onClick={(e) => {
               e.preventDefault()
-              handleIsFavorite(id)
+              handleIsFavorite({
+                id,
+                name,
+                pictureURL,
+                type
+              })
             }}
           >
             <Star

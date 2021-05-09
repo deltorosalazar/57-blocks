@@ -1,3 +1,4 @@
+import { Pokemon } from '@interfaces'
 import { ReactNode } from 'react'
 
 type PokemonTileProps = ReactNode & {
@@ -6,7 +7,7 @@ type PokemonTileProps = ReactNode & {
   type: string,
   pictureURL: string,
   isFavorite?: boolean
-  handleIsFavorite?: (pokemonID: string) => void
+  handleIsFavorite?: (pokemon: Pokemon) => void
 }
 
 export default PokemonTileProps

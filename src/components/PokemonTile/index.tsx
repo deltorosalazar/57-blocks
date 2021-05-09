@@ -2,6 +2,7 @@ import { FC, useContext, useEffect, useState } from 'react'
 import { PokemonsContext } from '@contexts'
 import { PokemonTileView } from './PokemonTileView'
 import PokemonTileProps from './PokemonTileProps'
+import { Pokemon } from '@interfaces'
 
 export const PokemonTile: FC<PokemonTileProps> = (props) => {
   const {
@@ -14,13 +15,13 @@ export const PokemonTile: FC<PokemonTileProps> = (props) => {
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(() => {
-    setIsFavorite(pokemonsContext.favorites.includes(id))
+    setIsFavorite(pokemonsContext.checkIsFavorite(id))
   }, [])
 
-  const handleIsFavorite = (pokemonID: string) => {
+  const handleIsFavorite = (pokemon: Pokemon) => {
     setIsFavorite(!isFavorite)
 
-    pokemonsContext.handleFavorites(pokemonID)
+    pokemonsContext.handleFavorites(pokemon)
   }
 
   return (

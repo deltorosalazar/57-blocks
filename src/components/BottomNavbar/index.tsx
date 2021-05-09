@@ -30,6 +30,11 @@ const NavItem = ({ item }) => {
   const { asPath } = useRouter()
 
   const isItemActive = (href: string): boolean => {
+    console.log({
+      asPath,
+      href
+    });
+
     return asPath.includes(href)
   }
 
