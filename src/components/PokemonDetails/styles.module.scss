@@ -1,0 +1,42 @@
+@import "../../styles/utils/pokemon-types";
+
+.pokemonDetails {
+  display: flex;
+  height: 100%;
+  padding: 4rem;
+}
+
+.imageWrapper {
+  display: flex;
+  flex: 0 1 60%;
+  justify-content: center;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+  }
+}
+
+.detailsWrapper {
+  flex: 0 1 40%;
+
+  > * {
+    margin-bottom: 1rem;
+  }
+}
+
+.typesWrapper {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.typeWrapper {
+  border-radius: 5px;
+  padding: 0.5rem;
+
+  @extend %pokemon-types;
+}
+
+.type {
+  text-transform: uppercase;
+}

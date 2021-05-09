@@ -1,0 +1,82 @@
+@import "../../styles/constants/colors";
+@import "../../styles/utils/pokemon-types";
+
+.pokemonTile {
+  position: relative;
+}
+
+.tileWrapper {
+  background-color: $white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 45%);
+  position: relative;
+  padding: 1rem;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  min-width: 220px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.favoriteWrapper {
+  background-color: $grey;
+  border: 3px solid $grey--dark;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  right: -0.7rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: -1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 2;
+
+  .icon {
+    color: $grey--dark;
+  }
+
+  &:hover,
+  &.favorite {
+    background-color: rgba($primary, 0.5);
+    border: 3px solid $primary--dark;
+
+    .icon {
+      color: $primary--dark;
+    }
+  }
+}
+
+.pictureWrapper {
+  position: absolute;
+  top: -35px;
+  right: 50%;
+  transform: translate(50%, 0);
+}
+
+.infoWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.id {
+  font-weight: bold;
+}
+
+.name {
+  margin-bottom: 1.5rem;
+}
+
+.typeWrapper {
+  border-radius: 5px;
+  padding: 0.5rem;
+
+  @extend %pokemon-types;
+}
+
+.type {
+  text-transform: uppercase;
+}

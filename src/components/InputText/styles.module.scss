@@ -1,0 +1,41 @@
+@import "../../styles/constants/colors";
+
+.inputText {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.2rem;
+}
+
+.input {
+  appearance: none;
+  background: inherit;
+  border-radius: 0.375rem;
+  border: 1px solid;
+  border-color: inherit;
+  color: inherit;
+  height: 3rem;
+  line-height: inherit;
+  margin-bottom: 0.2rem;
+  outline: 0;
+  padding: 0px;
+  padding-left: 1rem;
+  padding-right: 4.5rem;
+  position: relative;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.error {
+  font-size: 0.8rem;
+}
+
+.onError {
+  .label,
+  .input,
+  .error {
+    color: $danger;
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../styles/constants/colors";
+
+.baseLayout {
+  background-color: $white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' fill-opacity='0.48' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+  border: 1px solid purple;
+  height: 100vh;
+}
+
+.baseLayoutWrapper {
+  padding: 2rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  .inputSearchable {
+    flex: 0 1 80%;
+  }
+}
+
+.main {
+  height: 70vh;
+  max-height: 70vh;
+  overflow: hidden;
+}

@@ -1,0 +1,28 @@
+.pokemonList {
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.listWrapper {
+  display: flex;
+  column-gap: 1.5rem;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  padding: 2rem 0 4rem;
+  row-gap: 3rem;
+
+  div {
+    flex: 0 0 20%;
+  }
+}
