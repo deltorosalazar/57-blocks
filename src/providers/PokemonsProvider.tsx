@@ -85,7 +85,6 @@ export const PokemonsProvider = ({ children }) => {
   }, [currentPage])
 
   const handleNextPage = () => {
-
     setCurrentPage(currentPage => {
       return currentPage + 1
     })
